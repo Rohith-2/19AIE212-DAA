@@ -23,3 +23,9 @@
 .worksheet/src/merge_sort.scala
 *.csv
 *.xlsx
+.worksheet/src/GA_Final.scala
+.worksheet/bin/GA_1$.class
+.worksheet/bin/GA_1.class
+.worksheet/bin/GA_Final$.class
+.worksheet/bin/GA_Final.class
+.worksheet/src/GA_1.scala
