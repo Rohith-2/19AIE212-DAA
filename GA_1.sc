@@ -28,19 +28,14 @@ object GA_1 {
   def rt = scala.util.Random.nextInt(len)         //> rt: => Int
   def die = scala.util.Random.nextInt(6)          //> die: => Int
   
-  /* index = 3
-  // e.g. => 10111 (when mask1 is applied) => 101
-  // 				 101 11               011 10
-  // (mask1) 111 00				(mask2)	000 11
-  //         ---&---							---&---
-  // 				 101 00				|				000 10
-  val index = 3                                   > index  : Int = 3
-  val mask1 = ( 0x1F << (len-index)) & 0x1F       > mask1  : Int = 28
-  // 11111 -> 11111000 & 11111 -> 11000
-  Integer.toBinaryString(mask1)                   > res0: String = 11100
-  val mask2 = ( 0x1F >> index) & 0x1F             > mask2  : Int = 3
-  Integer.toBinaryString(mask2)                   > res1: String = 11
+  /* 
+   index = 3
+   e.g. => 10111 (when mask1 is applied) => 101
    
+   				 101 11               011 10
+   (mask1) 111 00				(mask2)	000 11
+          ---&---							---&---
+  				 101 00				|				000 10
    
   
   Example Demo for Mutation
