@@ -32,3 +32,10 @@
 .worksheet/src/Queen.scala
 .worksheet/bin/Queen$.class
 .worksheet/bin/Queen.class
+.cache-main
+.worksheet/bin/GA1$.class
+.worksheet/bin/GA1.class
+.worksheet/src/GA1.scala
+bin/GA$.class
+bin/GA$GA$.class
+bin/GA.class
