@@ -45,3 +45,10 @@ bin/GA.class
 .worksheet/bin/ShellSort.class
 .worksheet/bin/ShellSort$.class
 .worksheet/src/treeSort.scala
+.worksheet/bin/insert$.class
+.worksheet/bin/insert.class
+.worksheet/bin/Shell$.class
+.worksheet/bin/Shell.class
+.worksheet/src/insert.scala
+.worksheet/src/Shell.scala
+.worksheet/src/TimeAnalysis.scala

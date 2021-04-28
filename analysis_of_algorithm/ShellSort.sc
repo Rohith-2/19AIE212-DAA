@@ -2,21 +2,8 @@ import java.io._
 import util.Random
 
 object ShellSort {
-	
-def insertSort(l:Array[Int]) = {
-  	for(i<- 1 to l.length-1){
-  	var value = l(i)
-  	var	location = i - 1
-		while (location >= 0 && l(location)>value)
-		{
-			l(location + 1) = l(location)
-			location = location - 1
-		}
-		l(location+1) = value
-		}
-  }                                               //> insertSort: (l: Array[Int])Unit
-  
-def ShellSort(a:Array[Int]){
+
+def shellSort(a:Array[Int]){
 		val n = a.length;
 		var gap:Int = n/2
 		
@@ -33,25 +20,24 @@ def ShellSort(a:Array[Int]){
 		}
 		gap/=2
 		}
-}                                                 //> ShellSort: (a: Array[Int])Unit
-
-val end = 10000                                   //> end  : Int = 10000
-val begn = 10                                     //> begn  : Int = 10
-val inc = 10                                      //> inc  : Int = 10
-val nVal = (begn to end by inc).toArray           //> nVal  : Array[Int] = Array(10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120
-                                                  //| , 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270,
-                                                  //|  280, 290, 300, 310, 320, 330, 340, 350, 360, 370, 380, 390, 400, 410, 420, 
-                                                  //| 430, 440, 450, 460, 470, 480, 490, 500, 510, 520, 530, 540, 550, 560, 570, 5
-                                                  //| 80, 590, 600, 610, 620, 630, 640, 650, 660, 670, 680, 690, 700, 710, 720, 73
-                                                  //| 0, 740, 750, 760, 770, 780, 790, 800, 810, 820, 830, 840, 850, 860, 870, 880
-                                                  //| , 890, 900, 910, 920, 930, 940, 950, 960, 970, 980, 990, 1000, 1010, 1020, 1
-                                                  //| 030, 1040, 1050, 1060, 1070, 1080, 1090, 1100, 1110, 1120, 1130, 1140, 1150,
-                                                  //|  1160, 1170, 1180, 1190, 1200, 1210, 1220, 1230, 1240, 1250, 1260, 1270, 128
-                                                  //| 0, 1290, 1300, 1310, 1320, 1330, 1340, 1350, 1360, 1370, 1380, 1390, 1400, 1
-                                                  //| 410, 1420, 1430, 1440, 1450, 1460, 1470, 1480, 1490, 1500, 1510, 1520, 1530,
-                                                  //|  1540, 1550, 1560, 1570, 1580, 1590, 1600, 1610, 1620, 1630, 1640, 1650, 166
-                                                  //| 0, 1670, 1680, 1690, 170
-                                                  //| Output exceeds cutoff limit.
+		
+def insertSort(l:Array[Int]) = {
+  	for(i<- 1 to l.length-1){
+  	var value = l(i)
+  	var	location = i - 1
+		while (location >= 0 && l(location)>value)
+		{
+			l(location + 1) = l(location)
+			location = location - 1
+		}
+		l(location+1) = value
+		}
+  }
+		
+val end = 100
+val begn = 50
+val inc = 10
+val nVal = (begn to end by inc).toArray
 
 def timer(fn:Array[Int]=>Unit,begn:Int,end:Int,inc:Int)={
 var fibTime:Array[Long] = Array()
@@ -69,47 +55,20 @@ var fibTime:Array[Long] = Array()
   	fibTime = fibTime :+ (avgTime.reduce(_+_)/avgTime.length)
   }
  fibTime
-  }                                               //> timer: (fn: Array[Int] => Unit, begn: Int, end: Int, inc: Int)Array[Long]
+  }
   
-   val time =  timer(ShellSort,begn,end,inc)      //> time  : Array[Long] = Array(71731, 48208, 25955, 24997, 27103, 25508, 26224
-                                                  //| , 30373, 27401, 46353, 39158, 31588, 27923, 23877, 27774, 38347, 33091, 471
-                                                  //| 77, 24445, 35774, 44338, 35278, 33092, 34428, 36784, 35510, 38180, 42571, 5
-                                                  //| 2499, 78538, 69918, 56534, 56854, 85067, 54124, 52800, 73790, 59625, 64540,
-                                                  //|  50937, 52595, 62806, 54571, 62829, 55158, 54896, 59373, 55280, 65195, 6973
-                                                  //| 7, 67531, 62499, 81234, 84569, 79515, 86017, 91866, 94212, 92274, 110527, 9
-                                                  //| 3452, 83964, 101074, 83444, 100748, 97946, 114242, 97061, 92535, 113040, 99
-                                                  //| 660, 96649, 107890, 94651, 137503, 110537, 118817, 123075, 131540, 124720, 
-                                                  //| 128851, 130935, 132254, 126272, 123858, 175705, 173305, 147144, 147404, 156
-                                                  //| 489, 145142, 178819, 148447, 177250, 167609, 162592, 148322, 168464, 164920
-                                                  //| , 180929, 178304, 184904, 173268, 187042, 197998, 174533, 222338, 190717, 2
-                                                  //| 25347, 216433, 194433, 192129, 216335, 223313, 192684, 207926, 226670, 2188
-                                                  //| 74, 225503, 235422, 234
-                                                  //| Output exceeds cutoff limit.
-   val time_1 =  timer(insertSort,begn,end,inc)   //> time_1  : Array[Long] = Array(62454, 4169, 7060, 25825, 15079, 21890, 24679
-                                                  //| , 17671, 11075, 13679, 13629, 15812, 18426, 28340, 23305, 28472, 30468, 334
-                                                  //| 84, 37202, 45396, 28942, 9662, 9827, 10454, 11134, 11557, 14142, 12279, 127
-                                                  //| 93, 13493, 14564, 15395, 15993, 22279, 28592, 17805, 18402, 19344, 20481, 2
-                                                  //| 1589, 22493, 23466, 33671, 27679, 26402, 28094, 27644, 28734, 29544, 33459,
-                                                  //|  31725, 32602, 34468, 34354, 35252, 37396, 38312, 39009, 41263, 50473, 4341
-                                                  //| 5, 44464, 46668, 47771, 48577, 50139, 51447, 52760, 66141, 54833, 57755, 57
-                                                  //| 903, 59645, 63916, 69262, 64200, 86059, 69161, 70394, 70587, 72206, 74279, 
-                                                  //| 76226, 77285, 78439, 94325, 82809, 84716, 85834, 87501, 90191, 91124, 93409
-                                                  //| , 115211, 97004, 97932, 100295, 101075, 107459, 110814, 110335, 114081, 122
-                                                  //| 376, 114523, 121234, 135671, 121415, 122618, 134101, 125827, 159154, 129447
-                                                  //| , 132324, 137490, 154935, 142005, 148904, 148020, 146359, 180171, 152298, 1
-                                                  //| 53530, 156464, 159434, 
-                                                  //| Output exceeds cutoff limit.
+   val time =  timer(shellSort,begn,end,inc)
+   
+   val time_1 =  timer(insertSort,begn,end,inc)
  	
  //	val theorVal = nVal.map(i=>i*scala.math.log10(i))
  	
   val file = new File("/Users/rohith/scala-eclipse-work/19AIE212-DAA/ShellvsInsert.csv")
-                                                  //> file  : java.io.File = /Users/rohith/scala-eclipse-work/19AIE212-DAA/Shellv
-                                                  //| sInsert.csv
 	val bw = new BufferedWriter(new FileWriter(file))
-                                                  //> bw  : java.io.BufferedWriter = java.io.BufferedWriter@2d554825
 	for(n<-1 until time.length){
-		bw.write(nVal(n).toString+","+time(n).toString+time_1(n).toString+"\n")
+		bw.write(nVal(n).toString+","+time(n).toString+","+time_1(n).toString+"\n")
 	}
 	bw.close()
 
+}                                                 //> shellSort: (a: Array[Int])Unit
 }
