@@ -21,8 +21,7 @@ object Exporting {
   		memo(n)
   	}
   }                                               //> fibM: (n: Int)BigInt
-  
-  println("Welcome to the Scala worksheet")       //> Welcome to the Scala worksheet
+                                                  //> Welcome to the Scala worksheet
    def timeit(n:Int):Array[Array[Long]]={
    var fibTime:Array[Long] = Array()
    var fibMTime:Array[Long] = Array()
