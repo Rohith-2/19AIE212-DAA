@@ -1,3 +1,4 @@
+import scala.annotation.tailrec
 object merge_sort {
   println("Welcome to the Scala worksheet")       //> Welcome to the Scala worksheet
   val a1 = List(23,34,56,67)                      //> a1  : List[Int] = List(23, 34, 56, 67)
@@ -31,9 +32,9 @@ object merge_sort {
   	}
   }                                               //> mergesort: (a: List[Int])List[Int]
   
+  
   mergesort(List(2,5,4,3,2,6,7,5,12,21,11,65,32,9,0,3,60))
                                                   //> res2: List[Int] = List(0, 2, 2, 3, 3, 4, 5, 5, 6, 7, 9, 11, 12, 21, 32, 60, 
                                                   //| 65)
                                                   
-                                                  //> f  : Double = 0.0
 }

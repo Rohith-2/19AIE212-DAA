@@ -52,3 +52,9 @@ bin/GA.class
 .worksheet/src/insert.scala
 .worksheet/src/Shell.scala
 .worksheet/src/TimeAnalysis.scala
+.worksheet/src/mergesort.scala
+.worksheet/src/merge.scala
+.worksheet/bin/mergesort.class
+.worksheet/bin/mergesort$.class
+.worksheet/bin/merge.class
+.worksheet/bin/merge$.class
