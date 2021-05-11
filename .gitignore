@@ -58,3 +58,9 @@ bin/GA.class
 .worksheet/bin/mergesort$.class
 .worksheet/bin/merge.class
 .worksheet/bin/merge$.class
+.worksheet/src/Trail.scala
+.worksheet/src/GAPath.scala
+.worksheet/bin/Trail.class
+.worksheet/bin/Trail$.class
+.worksheet/bin/GAPath.class
+.worksheet/bin/GAPath$.class

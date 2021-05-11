@@ -40,20 +40,18 @@ val inc = 10
 val nVal = (begn to end by inc).toArray
 
 def timer(fn:Array[Int]=>Unit,begn:Int,end:Int,inc:Int)={
-var fibTime:Array[Long] = Array()
-
-
- for(i <- begn to end by inc) {
-   var avgTime:Array[Long] = Array()
-  	for (_ <-0 to 5) {
-	    var x = Array.fill(i)(1000).map(Random.nextInt)
-	  	val t0 = System.nanoTime()
-	  	fn(x)
-	  	val t1 = System.nanoTime() - t0
-	  	avgTime = avgTime :+ t1
-  	}
-  	fibTime = fibTime :+ (avgTime.reduce(_+_)/avgTime.length)
-  }
+	var fibTime:Array[Long] = Array()
+ 	for(i <- begn to end by inc) {
+	   var avgTime:Array[Long] = Array()
+	  	for (_ <-0 to 5) {
+		    var x = Array.fill(i)(1000).map(Random.nextInt)
+		  	val t0 = System.nanoTime()
+		  	fn(x)
+		  	val t1 = System.nanoTime() - t0
+		  	avgTime = avgTime :+ t1
+	  	}
+	  	fibTime = fibTime :+ (avgTime.reduce(_+_)/avgTime.length)
+	  }
  fibTime
   }
   
@@ -70,5 +68,5 @@ var fibTime:Array[Long] = Array()
 	}
 	bw.close()
 
-}                                                 //> shellSort: (a: Array[Int])Unit
+}
 }
