@@ -21,7 +21,7 @@
 .worksheet/src/GA.scala
 .worksheet/src/insertSort.scala
 .worksheet/src/merge_sort.scala
-*.csv
+
 *.xlsx
 .worksheet/src/GA_Final.scala
 .worksheet/bin/GA_1$.class
